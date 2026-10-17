@@ -1,31 +1,46 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# theprototype.app status — Upptime (https://upptime.js.org), roadmap 48 O3.
+#
+# THE PROBE RULE (do not break it): every check hits a JSON/health endpoint — never an HTML page and
+# never a `?ref=` play link — and says "Upptime" in its User-Agent. The community Worker's badge
+# counter and its error-report ingest DROP that user agent, so a probe every five minutes counts
+# nowhere (no Analytics Engine row; proven in lane 48-ops). Cloudflare Pages injects its analytics
+# beacon into HTML only, which is why the app is checked through /version.json.
+owner: theprototype-app
+repo: status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: App
+    url: https://theprototype.app/version.json
+    headers:
+      - "User-Agent: Mozilla/5.0 (compatible; Upptime/1.0; +https://status.theprototype.app)"
+  - name: Accounts, saves and community data (PocketBase)
+    url: https://pb.theprototype.app/api/health
+    headers:
+      - "User-Agent: Mozilla/5.0 (compatible; Upptime/1.0; +https://status.theprototype.app)"
+  - name: Connecting people (signaling)
+    url: https://peerjs.theprototype.app/peerjs
+    headers:
+      - "User-Agent: Mozilla/5.0 (compatible; Upptime/1.0; +https://status.theprototype.app)"
+  - name: Relay for hard networks (TURN)
+    check: "tcp-ping"
+    url: peerjs.theprototype.app
+    port: 3478
+
+# Alerts = GitHub issues in this repo (Upptime opens one when a site goes down and closes it when it
+# recovers), assigned so the owner is notified. Telegram is planned later.
+assignees:
+  - AlexZ005
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.theprototype.app
+  logoUrl: https://raw.githubusercontent.com/theprototype-app/core/main/static/logo.svg
+  name: theprototype.app status
+  introTitle: "Is **theprototype.app** working?"
+  introMessage: Checked from outside every five minutes. Your scenes and sessions are peer-to-peer, so most of the app keeps working even when a service below is down — signing in, cloud saves and the community need it. Something wrong that is not shown here? [Open an issue](https://github.com/theprototype-app/status/issues).
   navbar:
     - title: Status
       href: /
+    - title: Open the app
+      href: https://theprototype.app
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
