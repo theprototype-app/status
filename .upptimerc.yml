@@ -22,7 +22,7 @@ sites:
     headers:
       - "User-Agent: Mozilla/5.0 (compatible; Upptime/1.0; +https://status.theprototype.app)"
   - name: Alert test (48-ops, removed after)
-    url: https://theprototype.pages.dev/__48ops_alert_test_does_not_exist.json
+    url: https://theprototype.pages.dev/version.json
     expectedStatusCodes:
       - 200
     headers:
