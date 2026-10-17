@@ -27,6 +27,11 @@ on:
 concurrency:
   group: ${{ github.repository }}-${{ github.head_ref || github.ref_name }}-upptime
   cancel-in-progress: false
+# 48-ops: the org forbids write-by-default for workflows, so each one asks for what it needs
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   release:
     name: Build and deploy site
