@@ -54,6 +54,24 @@
     "dailyMinutesDown": {}
   },
   {
+    "name": "Alert test (48-ops, removed after)",
+    "url": "https://theprototype.pages.dev/__48ops_alert_test_does_not_exist.json",
+    "icon": "https://icons.duckduckgo.com/ip3/theprototype.pages.dev.ico",
+    "slug": "alert-test-48-ops-removed-after",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {}
+  },
+  {
     "name": "Relay for hard networks (TURN)",
     "url": "peerjs.theprototype.app",
     "icon": "https://icons.duckduckgo.com/ip3/null.ico",
