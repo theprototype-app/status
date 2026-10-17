@@ -55,22 +55,22 @@
   },
   {
     "name": "Alert test (48-ops, removed after)",
-    "url": "https://theprototype.pages.dev/__48ops_alert_test_does_not_exist.json",
+    "url": "https://theprototype.pages.dev/version.json",
     "icon": "https://icons.duckduckgo.com/ip3/theprototype.pages.dev.ico",
     "slug": "alert-test-48-ops-removed-after",
     "status": "up",
-    "uptime": "51.87%",
-    "uptimeDay": "51.87%",
-    "uptimeWeek": "51.87%",
-    "uptimeMonth": "51.87%",
-    "uptimeYear": "51.87%",
+    "uptime": "10.68%",
+    "uptimeDay": "10.68%",
+    "uptimeWeek": "10.68%",
+    "uptimeMonth": "10.68%",
+    "uptimeYear": "10.68%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-10-17": 0
+      "2026-10-17": 2
     }
   },
   {
