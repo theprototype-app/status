@@ -25,6 +25,13 @@ on:
 concurrency:
   group: ${{ github.repository }}-${{ github.head_ref || github.ref_name }}-upptime
   cancel-in-progress: false
+# 48-ops: the org forbids write-by-default for workflows, so each one asks for what it needs
+permissions:
+  actions: write
+  contents: write
+  issues: write
+  pages: write
+
 jobs:
   release:
     name: Setup Upptime
@@ -48,12 +55,8 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref_name }}
           token: ${{ steps.app_token.outputs.token || secrets.GH_PAT || github.token }}
-      - name: Update template
-        uses: upptime/uptime-monitor@v1.46.0
-        with:
-          command: "update-template"
-        env:
-          GH_PAT: ${{ steps.app_token.outputs.token || secrets.GH_PAT || github.token }}
+      # 48-ops: no "Update template" step — it rewrites .github/workflows, which a GITHUB_TOKEN may never
+      # do, and it would drop the explicit permissions above. Template updates are a manual PR.
       - name: Update response time
         uses: upptime/uptime-monitor@v1.46.0
         with:
