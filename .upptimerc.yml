@@ -21,6 +21,10 @@ sites:
     url: https://peerjs.theprototype.app/peerjs
     headers:
       - "User-Agent: Mozilla/5.0 (compatible; Upptime/1.0; +https://status.theprototype.app)"
+  - name: Community pages and error reports (Worker)
+    url: https://theprototype.app/community/api/health
+    headers:
+      - "User-Agent: Mozilla/5.0 (compatible; Upptime/1.0; +https://status.theprototype.app)"
   - name: Relay for hard networks (TURN)
     check: "tcp-ping"
     url: peerjs.theprototype.app
