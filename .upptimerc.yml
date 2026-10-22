@@ -31,7 +31,12 @@ sites:
     port: 3478
 
 # Alerts = GitHub issues in this repo (Upptime opens one when a site goes down and closes it when it
-# recovers), assigned so the owner is notified. Telegram is planned later.
+# recovers), assigned so the owner is notified, AND one Telegram message per incident open / close
+# (roadmap 50 T1) through the owner's existing bot. That part is repo SECRETS only, no config here:
+# NOTIFICATION_TELEGRAM=true, NOTIFICATION_TELEGRAM_BOT_KEY, NOTIFICATION_TELEGRAM_CHAT_ID, and
+# NOTIFICATIONS_DOWN_MESSAGE / NOTIFICATIONS_UP_MESSAGE, which start "theprototype.app ·" so they
+# stand apart from the other messages in that chat. Mute: DELETE the NOTIFICATION_TELEGRAM secret
+# (any value, even "false", counts as on); re-add it as `true` to unmute (cloud repo docs/alerts.md).
 assignees:
   - AlexZ005
 
